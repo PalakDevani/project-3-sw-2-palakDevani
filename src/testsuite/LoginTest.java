@@ -1,5 +1,6 @@
 package testsuite;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,6 +45,10 @@ public class LoginTest extends Utility {
         String expectedMessage = "Your password is invalid!\n" + "×";
         String actualMessage = getTextFromElement(By.xpath("//div[@id='flash-messages']//div[1]"));
         Assert.assertEquals(expectedMessage, actualMessage);
+    }
+    @After
+    public void tearDown(){
+        closeBrowser();
     }
 
 
